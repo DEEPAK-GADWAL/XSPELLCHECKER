@@ -20,8 +20,9 @@ function App() {
     const words = val.split(" ");
     const newSuggestions = words
       .map((word) => {
-        if (customDictionary[word]) {
-          return { incorrect: word, correct: customDictionary[word] };
+        const lowerCaseWord = word.toLowerCase();
+        if (customDictionary[lowerCaseWord]) {
+          return { incorrect: word, correct: customDictionary[lowerCaseWord] };
         }
         return null;
       })
